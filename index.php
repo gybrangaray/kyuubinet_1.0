@@ -8,9 +8,11 @@
         $nombre = $_SESSION['nombre'];
         $id = $_SESSION['id'];
         $tipo_usuario = $_SESSION['tipo_usuario'];
-        if($tipo_usuario == "administrador"){
+         if($tipo_usuario == "administrador"){
             $where = "";
-            }else if($tipo_usuario == "estandar"){
+            }else if($tipo_usuario == "ventas"){
+            $where = "WHERE id = $id";
+            }else if($tipo_usuario = "administracion"){
             $where = "WHERE id = $id";
         }
         $sql = "SELECT * FROM usuarios $where";
@@ -60,7 +62,7 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Principal
                             </a>
-                            <?php if($tipo_usuario == "administrador") { ?>
+                            <?php if($tipo_usuario == "administrador" ) { ?>
                             
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
@@ -84,19 +86,37 @@
                                 </nav>
                             </div>
                            <!-- aqui cierra llave -->
-                          
+                           
                             <div class="sb-sidenav-menu-heading">Areas</div>
                             <a class="nav-link" href="depto_ventas.php">
                                 <div class="sb-nav-link-icon"><i class="fa fa-credit-card"></i></div>
                                 Departamento de ventas
                             </a>
+                            
+                            
                             <a class="nav-link" href="depto_admon.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-calculator" aria-hidden="true"></i></div>
                                 Departamento de administración
                             </a>
                             <?php 
+                                 } 
+
+                                 else if($tipo_usuario == "ventas"){ ?>
+                                    <a class="nav-link" href="depto_ventas.php">
+                                          <div class="sb-nav-link-icon"><i class="fa fa-credit-card"></i></div>
+                                           Departamento de ventas
+                                    </a>
+                                <?php 
                                  }
-                                ?>
+
+                                 else if($tipo_usuario == "administracion"){ ?>
+                                      <a class="nav-link" href="depto_admon.php">
+                                          <div class="sb-nav-link-icon"><i class="fas fa-calculator" aria-hidden="true"></i></div>
+                                           Departamento de administración
+                                     </a>
+                                <?php 
+                                 }
+                             ?>
                         </div>
                        
                     </div>
@@ -151,13 +171,15 @@
                                                 <td><?php echo $row['tipo_usuario']; ?></td>
                                             </tr>
                                             <?php 
-                                                }
+                                                } 
                                             ?>
+                                           
                                     </table>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
+                        <?php if($tipo_usuario == "ventas" || $tipo_usuario == "administrador"){ ?>
                             <div class="col-xl-6 col-md-6">
                                 <div class="card bg-success text-white mb-4">
                                     <div class="card-body">Departamento de ventas</div>
@@ -167,6 +189,9 @@
                                     </div>
                                 </div>
                             </div>
+                        <?php
+                        } 
+                        if($tipo_usuario == "administracion" || $tipo_usuario == "administrador"){ ?>
                             <div class="col-xl-6 col-md-6">
                                 <div class="card bg-danger text-white mb-4">
                                     <div class="card-body">Departamento de administración</div>
@@ -176,13 +201,16 @@
                                     </div>
                                 </div>
                             </div>
+                        <?php
+                        }
+                        ?>
                         </div>
                     </div>
                 </main>
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid">
                         <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Kyuubinet 2021</div>
+                            <div class="text-muted">Copyright &copy; Kyuubinet 2021, CDMX</div>
                             <div>
                                 <a href="#">Politicas de privacidad</a>
                                 &middot;

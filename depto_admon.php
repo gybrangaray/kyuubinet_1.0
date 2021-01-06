@@ -8,11 +8,7 @@ session_start();
     $nombre = $_SESSION['nombre'];
     $id = $_SESSION['id'];
     $tipo_usuario = $_SESSION['tipo_usuario'];
-    if($tipo_usuario == "administrador"){
-        $where = "";
-        }else if($tipo_usuario == "estandar"){
-        $where = "WHERE id = $id";
-    }
+    
     $sql = "SELECT * FROM usuarios $where";
     $resultado = $mysqli->query($sql);
 
@@ -54,44 +50,24 @@ session_start();
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                            <a class="nav-link" href="index.html">
+                            <a class="nav-link" href="index.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Principal
                             </a>
-                            <?php if($tipo_usuario == "administrador") { ?>
-                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                                Paginas
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                                        Authentication
-                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="login.php">Iniciar</a>
-                                            <a class="nav-link" href="register.html">Registrar</a>
-                                            <a class="nav-link" href="password.html">Olvidaste tu contraseña</a>
-                                        </nav>
-                                    </div>
-                                    
-                                </nav>
-                            </div>
+                           
                             
-                            <div class="sb-sidenav-menu-heading">Areas</div>
+                            
+                            <?php if($tipo_usuario == "ventas") { ?>
                             <a class="nav-link" href="depto_ventas.php">
                                 <div class="sb-nav-link-icon"><i class="fa fa-credit-card"></i></div>
                                 Departamento de ventas
                             </a>
-                            
+                            <?php } ?>
                             <a class="nav-link" href="depto_admon.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-calculator"></i></div>
                                 Departamento de administración
                             </a>
-                             <?php } ?>
+                        
                         </div>
                     </div>
                    
@@ -106,7 +82,7 @@ session_start();
                     <div class="container-fluid">
                         <h1 class="mt-4"> <?php echo $_SESSION['nombre']; ?> </h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item"><a href="index.php">Pincipal</a></li>
+                            <li class="breadcrumb-item"><a href="index.php">Principal</a></li>
                             <li class="breadcrumb-item active"><?php echo $_SESSION['nombre']; ?></li>
                         </ol>
                         <div class="card mb-4">
