@@ -40,7 +40,7 @@ session_start();
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <?php echo $_SESSION['nombre']; ?><i class="fas fa-user fa-fw"></i></a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                        <a class="dropdown-item" href="login.php">Cerrar sesión</a>
+                        <a class="dropdown-item" href="logout.php">Cerrar sesión</a>
                     </div>
                 </li>
             </ul>
@@ -54,11 +54,18 @@ session_start();
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Principal
                             </a>
-                            <a class="nav-link" href="depto_ventas.php">
+                            <!-- SUBMENU DEL DEPARTAMENTO DE VENTAS | SUBMENU DEL DEPARTAMENTO DE VENTAS -->
+                            <a class="nav-link collapsed"  data-toggle="collapse" data-target="#collapseVentas" aria-expanded="false" aria-controls="collapseVentas">
                                 <div class="sb-nav-link-icon"><i class="fa fa-credit-card"></i></div>
                                 Departamento de ventas
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
-
+                            <div class="collapse" id="collapseVentas" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
+                                    <a class="nav-link collapsed" href="CatalogoClientes.php">
+                                        Catalogo de clientes
+                                    </a>
+                            </div>
+                             <!-- SUBMENU DEL DEPARTAMENTO DE ADMON | SUBMENU DEL DEPARTAMENTO DE ADMON  -->
                             <?php 
                             if($tipo_usuario == "administracion") { ?>
                             <a class="nav-link" href="depto_admon.php">

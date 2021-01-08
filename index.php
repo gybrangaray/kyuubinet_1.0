@@ -85,30 +85,52 @@
                                    
                                 </nav>
                             </div>
-                           <!-- aqui cierra llave -->
+                           
                            
                             <div class="sb-sidenav-menu-heading">Areas</div>
+                             <!-- SUBMENU DEL NOC | SUBMENU DEL NOC | SUBMENU DEL NOC -->
+                            <a class="nav-link collapsed"  data-toggle="collapse" data-target="#collapseNOC" aria-expanded="false" aria-controls="collapseNOC">
+                                <div class="sb-nav-link-icon"><i class="fas fa-laptop"></i></div>
+                                NOC
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseNOC" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
+                                    <a class="nav-link collapsed" href="ControlFallasCambios.php">
+                                        Control de fallas | Control de cambios
+                                    </a>
+                                    <a class="nav-link collapsed" href="ordenesAprovisionamiento.php">
+                                        Ordenes de aprovisionamiento
+                                    </a>
+                            </div>
+
+                            <!-- SUBMENU DEL DEPARTAMENTO DE VENAS | SUBMENU DEL DEPARTAMENTO DE VENTAS  -->
                             <a class="nav-link" href="depto_ventas.php">
                                 <div class="sb-nav-link-icon"><i class="fa fa-credit-card"></i></div>
                                 Departamento de ventas
                             </a>
                             
-                            
+                            <!-- SUBMENU DEL DEPARTAMENTO DE ADMON | SUBMENU DEL DEPARTAMENTO DE ADMON  -->
                             <a class="nav-link" href="depto_admon.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-calculator" aria-hidden="true"></i></div>
                                 Departamento de administración
                             </a>
+                            
+                                <!-- SUBMENU DEL DEPARTAMENTO DE VENAS CON LOG VENTAS | SUBMENU DEL DEPARTAMENTO DE VENTAS CON LOG VENTAS -->
                             <?php 
                                  } 
-
                                  else if($tipo_usuario == "ventas"){ ?>
-                                    <a class="nav-link" href="depto_ventas.php">
-                                          <div class="sb-nav-link-icon"><i class="fa fa-credit-card"></i></div>
-                                           Departamento de ventas
+                                    <a class="nav-link collapsed"  data-toggle="collapse" data-target="#collapseVentas" aria-expanded="false" aria-controls="collapseVentas">
+                                <div class="sb-nav-link-icon"><i class="fa fa-credit-card"></i></div>
+                                Departamento de ventas
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseVentas" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
+                                    <a class="nav-link collapsed" href="CatalogoClientes.php">
+                                        Catalogo de clientes
                                     </a>
+                            </div>
                                 <?php 
                                  }
-
                                  else if($tipo_usuario == "administracion"){ ?>
                                       <a class="nav-link" href="depto_admon.php">
                                           <div class="sb-nav-link-icon"><i class="fas fa-calculator" aria-hidden="true"></i></div>
@@ -118,13 +140,11 @@
                                  }
                              ?>
                         </div>
-                       
                     </div>
                     
                     <div class="sb-sidenav-footer">
                         <div class="small">Registrado como:</div>
                         <?php echo $_SESSION['nombre']; ?>
-                        
                     </div>
                 </nav>
             </div>
