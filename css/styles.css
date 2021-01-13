@@ -66,7 +66,7 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  background-color: #fff;
+  background-color: rgba(189, 181, 173, 0.1); /*colorFondo */
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -4612,8 +4612,8 @@ input[type=button].btn-block {
 .page-item.active .page-link {
   z-index: 3;
   color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
+  background-color: rgba(253, 126, 20, 0.9);
+  border-color: rgba(253, 126, 20, 1);
 }
 .page-item.disabled .page-link {
   color: #6c757d;
@@ -10011,6 +10011,7 @@ body {
 .container-md,
 .container-lg,
 .container-xl {
+  padding-bottom: 10px;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
@@ -10246,4 +10247,12 @@ body {
 }
 .sb-sidenav-light .sb-sidenav-footer {
   background-color: #e9ecef;
+}
+#hoverTables{
+  background-color: rgb(255, 255, 255);
+ 
+}
+#hoverTables:hover{
+  background-color: rgba(253, 126, 20, 0.2);
+  
 }
