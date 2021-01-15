@@ -92,7 +92,7 @@ session_start();
                         </ol>
                         <div class="card mb-4">
                             <div class="card-body">
-                                Aqui va lo relacionado con el Departamento de ventas
+                                Aqui meter fomulario para la info de los clientes
                             </div>
                         </div>
                        
