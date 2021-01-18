@@ -22,7 +22,7 @@ session_start();
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Departamento de ventas</title>
+        <title>Catálogo de clientes</title>
         <link href="css/styles.css" rel="stylesheet" />
         
          <link rel="shortcut icon" href="https://raw.githubusercontent.com/gybrangaray/login/master/kyuubinetSolo.png" />
