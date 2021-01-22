@@ -1,3 +1,6 @@
+<?php 
+
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -29,7 +32,7 @@
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#nosotros">Nostros</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#servicios">Servicios</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contacto">Contacto</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="register.html">Registrate</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../register.html" ?> >Registrate</a></li>
                     </ul>
                 </div>
             </div>
@@ -204,8 +207,8 @@
                         
                         <h2 class="mt-0">¡Mantengamonos en contacto!</h2>
                         <div class="registrateCentro">
-                            <a class="btn btn-outline-primary " href="register.html">¡REGISTRATE!</a>
-                            <a class="btn btn-outline-primary " href="login.php">¿YA TIENES UNA CUENTA?</a>
+                            <a class="btn btn-outline-primary " href="../register.html">¡REGISTRATE!</a>
+                            <a class="btn btn-outline-primary " href="../login.php">¿YA TIENES UNA CUENTA?</a>
                             <div>
                         <hr class="divider my-4" />
                         <p class="text-muted mb-5">¿Listo para recibir el mejor servicio?  ¡Llámanos o envíanos un correo electrónico y nos comunicaremos contigo lo antes posible!</p>

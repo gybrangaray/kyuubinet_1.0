@@ -129,12 +129,12 @@ session_start();
                                                 <td>
                                                 <a href=<?php echo $row['memoria_tecnica'] ?>>
                                                 <?php if($row['memoria_tecnica'] == ""){ ?>
+                                                </a>
                                                 <?php
-                                                    echo "Sin memoria téncica"; }
+                                                echo "Sin memoria téncica"; }
                                                     else {echo $row['memoria_tecnica'];
                                                     }
                                                     ?>
-                                                </a>
                                                 </td>                                             
                                             </tr>
                                             <?php 
